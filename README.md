@@ -1,4 +1,4 @@
-# AccentBridge — audio samples
+# DEFINE — audio samples
 
 A static page: no build step, no dependencies, no network calls. Everything it needs is in this
 folder.
