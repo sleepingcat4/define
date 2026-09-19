@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
-<meta name="description" content="DEFINE audio samples for prototype-anchored accent control in zero-shot text-to-speech.">
-<title>DEFINE — Audio Samples</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232f65b9'/%3E%3Cpath d='M9 8h6.5c5.4 0 8.5 3 8.5 8s-3.1 8-8.5 8H9V8zm6.1 12.2c3.1 0 4.7-1.4 4.7-4.2s-1.6-4.2-4.7-4.2h-2v8.4h2z' fill='white'/%3E%3C/svg%3E">
+<meta name="description" content="DEFINE: exemplar-guided accent control for zero-shot text-to-speech.">
+<title>DEFINE: Exemplar-Guided Accent Control for Zero-Shot TTS</title>
+<link rel="icon" type="image/png" href="crying-angel.png">
 <style>
 :root{
   --ink:#151515;--muted:#5f6268;--blue:#3768b4;--line:rgba(20,20,20,.12);
@@ -30,14 +30,21 @@ body::after{content:"DEFINE";position:fixed;z-index:-1;left:-1vw;top:6vh;color:r
 .topbar{height:68px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
 .brand{font-size:18px;font-weight:700;letter-spacing:-.03em}
 .eyebrow{font-size:12px;line-height:1;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);font-weight:650}
-.hero{padding:100px 0 68px;display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.47fr);gap:70px;align-items:end}
-h1{font-size:clamp(3.2rem,6.4vw,6rem);line-height:.96;letter-spacing:-.065em;margin:0;font-weight:650;max-width:13ch}
+.hero{padding:100px 0 68px;display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.42fr);gap:70px;align-items:end}
+h1{font-size:clamp(3rem,5.8vw,5.5rem);line-height:.96;letter-spacing:-.062em;margin:0;font-weight:650;max-width:15ch}
 h1 em{font-style:normal;color:var(--blue);border-bottom:2px solid currentColor}
 .intro{margin:0 0 5px;font-size:clamp(1.05rem,1.6vw,1.28rem);line-height:1.5;letter-spacing:-.02em;max-width:32ch}
 .panel{background:var(--glass);border:1px solid rgba(255,255,255,.8);box-shadow:var(--shadow);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-radius:var(--radius)}
-.summary{margin-bottom:82px;padding:27px 30px;display:grid;grid-template-columns:170px 1fr;gap:32px}
+.paper-meta{margin-bottom:18px;padding:30px;display:grid;grid-template-columns:180px 1fr;gap:34px}
+.paper-meta h2,.summary h2,.section-title{margin:0;font-size:1.1rem;line-height:1.3;letter-spacing:-.025em}
+.authors{margin:0 0 22px;font-size:clamp(1.15rem,2vw,1.55rem);line-height:1.45;letter-spacing:-.025em;font-weight:600}
+.authors span{white-space:nowrap}.authors sup{color:var(--blue);font-size:.58em;margin-left:2px;vertical-align:super}
+.affiliations{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px;margin:0;padding:0;list-style:none}
+.affiliations li{display:flex;align-items:baseline;gap:10px;padding:10px 0;border-top:1px solid var(--line);color:#393d44}
+.affiliations b{display:grid;place-items:center;flex:0 0 24px;height:24px;border-radius:50%;background:var(--blue);color:white;font-size:11px}
+.summary{margin-bottom:82px;padding:30px;display:grid;grid-template-columns:180px 1fr;gap:34px}
 .summary h2,.section-title{margin:0;font-size:1.1rem;line-height:1.3;letter-spacing:-.025em}
-.summary p{margin:0;color:#31343a;max-width:72ch}
+.summary p{margin:0;color:#31343a;max-width:76ch;text-wrap:pretty}
 .section{padding:0 0 86px}
 .section-head{display:grid;grid-template-columns:1fr minmax(280px,1fr);gap:40px;align-items:start;margin-bottom:28px}
 .section-title{font-size:clamp(1.7rem,3vw,2.4rem)}
@@ -64,11 +71,11 @@ footer{border-top:1px solid var(--line);padding:28px 0 44px;display:flex;justify
 footer p{margin:0;max-width:68ch}code{font-family:inherit;background:rgba(255,255,255,.64);padding:2px 6px;border-radius:5px}
 @media(max-width:780px){
   .shell{width:min(100% - 28px,1120px)}.hero{padding:68px 0 44px;grid-template-columns:1fr;gap:30px}.intro{max-width:42ch}
-  .summary,.section-head,.note{grid-template-columns:1fr;gap:12px}.summary{margin-bottom:62px;padding:23px}.section{padding-bottom:64px}
+  .paper-meta,.summary,.section-head,.note{grid-template-columns:1fr;gap:14px}.paper-meta,.summary{padding:23px}.summary{margin-bottom:62px}.section{padding-bottom:64px}
   .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}footer{flex-direction:column}
 }
 @media(max-width:520px){h1{font-size:3.05rem}.topbar{height:60px}.hero{padding-top:54px}.cards{gap:10px}.card{padding:15px}
-  .tiles{grid-template-columns:1fr}.summary{border-radius:18px}.section-title{font-size:1.7rem}}
+  .tiles,.affiliations{grid-template-columns:1fr}.paper-meta,.summary{border-radius:18px}.section-title{font-size:1.7rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
@@ -80,13 +87,32 @@ footer p{margin:0;max-width:68ch}code{font-family:inherit;background:rgba(255,25
   </nav>
 
   <header class="hero">
-    <h1>Shape the accent. <em>Keep the voice.</em></h1>
-    <p class="intro">Prototype-anchored exemplar conditioning for precise accent control in zero-shot text-to-speech.</p>
+    <h1><em>DEFINE:</em> Exemplar-guided accent control for zero-shot TTS</h1>
+    <p class="intro">A single-model framework for controlling accent strength from audio exemplars while preserving speaker identity.</p>
   </header>
 
-  <section class="summary panel" aria-labelledby="about-title">
-    <h2 id="about-title">About DEFINE</h2>
-    <p>DEFINE takes the voice and the accent as two <em>separate</em> examples: a reference prompt fixes who is speaking, while short exemplar clips of any speaker fix the accent. A single guidance weight <em>w</em>, chosen after training, sets how strongly the accent is applied. The system uses one model and one forward pass, with no accent label and no conversion stage after synthesis.</p>
+  <section class="paper-meta panel" aria-labelledby="authors-title">
+    <h2 id="authors-title">Authors &amp; affiliations</h2>
+    <div>
+      <p class="authors">
+        <span>Ambuj Mehrish<sup>1</sup></span>,
+        <span>Abhinaba Roy<sup>4</sup></span>,
+        <span>Alex Ivanov<sup>2</sup></span>,
+        <span>Tawsif Ahmed<sup>3</sup></span>,
+        <span>Dorien Herremans<sup>4</sup></span>
+      </p>
+      <ol class="affiliations">
+        <li><b>1</b><span>Ca’ Foscari University of Venice</span></li>
+        <li><b>2</b><span>Kandinsky Lab</span></li>
+        <li><b>3</b><span>Sleeping AI</span></li>
+        <li><b>4</b><span>Singapore University of Technology and Design</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="summary panel" aria-labelledby="abstract-title">
+    <h2 id="abstract-title">Abstract</h2>
+    <p>Zero-shot text-to-speech (TTS) can reproduce an unseen speaker from a short reference recording, but typically entangles speaker identity and accent within the same reference. We introduce DEFINE, an end-to-end framework that decouples these factors by conditioning speaker identity and target accent on separate audio exemplars. A single inference-time guidance weight continuously controls accent strength without retraining. Built on F5-TTS with parameter-efficient LoRA adaptation, DEFINE maps short accent exemplars into a conditioning space using an exemplar encoder supervised through learned accent prototypes, requiring neither accent labels at inference time nor post-synthesis waveform conversion. On seen accents, increasing accent guidance improves accent-probe accuracy from 6.5% to 19.6%. More importantly, a single DEFINE model generalizes accent control beyond its training accent set: across both seen and out-of-domain accents, it matches the accent transfer performance of a two-model TTS–voice-conversion cascade while achieving higher speaker similarity and comparable predicted speech quality. These results demonstrate that speaker identity and accent can be independently controlled from audio exemplars within a single zero-shot TTS model, including for accents unseen during training.</p>
   </section>
 
   <main>
@@ -113,7 +139,7 @@ footer p{margin:0;max-width:68ch}code{font-family:inherit;background:rgba(255,25
 
   <footer>
     <p>Audio is 24&nbsp;kHz mono WAV. Accent references are drawn from Common Voice; voice prompts come from a licensed voice bank. Samples are generated at <code>w</code> as labelled.</p>
-    <span>DEFINE · 2026</span>
+    <span>Made by Sleeping AI</span>
   </footer>
 </div>
 <script src="samples.js"></script>
